@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Test-1 Form</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/436cc35420.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="coloress" name="subForm" >
+        <form onsubmit="formSubmits()"> <!--onsubmit="formSubmits()" -->
+            <!--method="GET" action="submited.html" name="subForm" onsubmit="formSubmits()" -->
+            <div class="form">
+                <h2>Get In Touch</h2>
+
+                <div class="text_feild">
+                    <label for="fname">First name</label>
+                    <input type="text" id="fname">
+
+
+                    <label for="lname">Last name</label>
+                    <input type="text" id="lname">
+
+
+                    <div class="mb_1 radio" onclick="marriedd()">
+                        <label>Married</label>
+                        <input type="radio" name="status" id="married" >
+
+                        <label>Unmarried</label>
+                        <input type="radio" name="status"> 
+                    </div>
+
+                    <div id="Spo_name">
+                        <label for="s_name">Spouse Name</label>
+                        <input type="text" id="s_name">
+                    </div>
+
+
+                    <label for="about_textarea">About yourself</label>
+                    <textarea name="" id="about_textarea" cols="30" rows="5"></textarea>
+
+                    <div class="mb_1 radio" id="genderradio">
+                        <label>Gender &nbsp;:</label>
+
+                        <input type="radio" name="gender" id="male">
+                        <label>Male</label>
+
+
+                        <input type="radio" name="gender">
+                        <label>Female</label>
+                    </div>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="emailid" onfocusout="emailValid()">
+
+                </div>
+
+                <div class="submit_btn">
+                    <button type="submit" id="submitbtn">Submit</button>  <!-- onclick="formSubmits()" -->
+                    <!-- <button type="submit" onclick="redirect()">Redirect </button> -->
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

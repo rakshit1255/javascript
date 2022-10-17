@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submitted</title>
+</head>
+<body>
+    <h1>Thank You !</h1>
+    <p id="f_name"></p>
+    <p id="l_name"></p>
+    <p id="m_status"></p>
+    <p id="s_name"></p>
+    <p id="about_your"></p>
+    <p id="gender"></p>
+    <p id="email"></p>
+</body>
+<script>
+
+    let fname = localStorage.getItem("f_name");
+    let lname = localStorage.getItem("l_name");
+    let m_status = localStorage.getItem("status")
+    let about_textarea = localStorage.getItem("about_your");
+    let spo_name = localStorage.getItem("s_name");
+    let gender = localStorage.getItem("gender");
+    let email = localStorage.getItem("email");
+
+   document.getElementById("f_name").innerHTML="First name = "+fname;
+
+   document.getElementById("l_name").innerHTML="Last name = "+lname;
+
+   document.getElementById("m_status").innerHTML="Marital status = "+m_status;
+
+   if(m_status=="unMarried"){
+       document.getElementById("s_name").style.display="none"
+    }
+    
+   document.getElementById("s_name").innerHTML="Spouse Name = "+spo_name;
+   
+   document.getElementById("about_your").innerHTML="About Your Self = "+about_textarea;
+
+   document.getElementById("gender").innerHTML="Gender = "+gender;
+
+   document.getElementById("email").innerHTML="Email = "+email;
+
+
+    // let mrd = document.getElementById("married").checked;
+    // let gender = document.querySelectorAll("input[name='gender']").checked;
+
+
+</script>
+</html>

@@ -1,0 +1,126 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+  
+  font-family: 'Poppins', sans-serif;
+  color: rgb(50, 50, 50);
+  height: 100vh;
+
+
+background: #007991;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #007991, #58b99c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #007991, #58b99c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+
+/* ***************************************** */
+/* ***************************************** */
+
+#coloress{
+  padding: 26px;
+}
+form{
+  width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+form h2{
+  color: black;
+  font-size: 2rem;
+  margin: 16px 0 30px 0;
+  border-bottom: #267871 3px solid;
+}
+
+input,textarea{
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: #edeceb;
+  border-radius: 5px;
+  margin: 5px 0;
+  resize: none;
+}
+.text_feild .radio{
+    margin: 16px 0;
+}
+
+.text_feild .radio input{
+    display: inline-block;
+    width: auto;
+    margin-left: 8px;
+}
+.text_feild .radio label:nth-of-type(2n){
+    margin-left: 18px;
+}
+#genderradio label:nth-of-type(2n){
+    margin: 0 !important;
+}
+
+.text_feild input,textarea {
+  display: block;
+  width: 100%;
+}
+
+
+
+.submit_btn{
+  margin: 20px 0 20px 0 ;
+  text-align: center;
+}
+.submit_btn button{
+  padding: 8px 15px;
+  color: #ffffff;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #267871;
+  border: 2px solid #267871;
+  cursor: pointer;
+}
+.submit_btn button:hover{
+  background-color: transparent;
+  border: 2px solid #267871;
+  color: #267871;
+}
+#error{
+  color: red;
+}
+
+#Spo_name{
+    display: none;
+}
+
+
+
+/* *************************************************************************** */
+/* ================================= MEDIA QUERY ============================== */
+/* *************************************************************************** */
+
+@media (max-width: 1199px) {
+  
+}
+
+@media (max-width: 991px) {
+  
+}
+
+@media (max-width: 767px) {
+  
+}
+
+@media (max-width: 576px) {
+  .form_content{
+    padding: 0;
+  }
+  form{
+    width: auto;
+    margin: 20px;
+    padding: 10px 20px;
+  }
+}
+
