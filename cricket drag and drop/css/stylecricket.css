@@ -1,0 +1,105 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+  
+  font-family: 'Poppins', sans-serif;
+  color: rgb(50, 50, 50);
+}
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+.main_input{
+  background-color: rgb(8, 92, 44);
+  color: white;
+  padding: 26px;
+  display: flex;
+  
+}
+.main_input input{
+  font-size: 20px;
+  margin-right: 20px;
+}
+.main_input label{
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.main_team_div{
+  /* / margin-top:30px; / */
+  display: flex;
+  background-color: rgb(5, 28, 20);
+  justify-content: space-between;
+  /* / width: 800px; / */
+  padding: 20px;
+}
+h2{
+  color: white;
+}
+#player p{
+  cursor: pointer;
+  text-align: center;
+}
+#player{
+  width: 160px;
+}
+#pointer{
+  cursor: pointer;
+  text-align: center;
+}
+.ply_name{
+  text-align: center;
+  /* / background-color: rgb(113, 172, 163); / */
+  background-color: rgb(37, 111, 102);
+  color: white;
+  padding: 10px;
+  margin: 8px
+}
+.team_box{
+  /* / padding: 0 16px; / */
+  width: 160px;
+  text-align: center;
+  /* height: 100vh; */
+}
+.teams_btn,.submit_btn,.clr_btn{
+  background-color: white;
+  color: rgb(37, 111, 102);
+  outline: none;
+  padding: 6px 12px;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+.teams_btn:hover,.submit_btn:hover,.clr_btn:hover{
+  background-color: rgb(5, 28, 20);
+  color: white;
+}
+#rendered_team{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ /* height: 300px !important; */
+ margin-top: 50px;
+}
+
+#rendered_team .team_box{
+  height: auto;
+  padding: 20px;
+}
+
+
+/* let team_count = document.getElementById("tem_count").value;
+//     let add_tag = document.getElementById("main_div");
+//     let player = document.getElementById("player"); */
+
+ /* for(let i = 1; i <= team_count; i++){
+  let h2 = document.createElement("h2");
+  let div = document.createElement("div");
+  add_tag.appendChild(div);
+  let div_main=add_tag.appendChild(div);
+  div_main.appendChild(h2).innerText = "Team "+i;
+}  */
