@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form</title>
+  <script src="https://kit.fontawesome.com/0b0d66beb0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./Css/style.css" />
+</head>
+
+<body>
+    <section class="section">
+        <form action="/signup" method="POST">
+            <p>
+              <label>Title</label>
+              <label>
+                <input type="radio" name="title" value="mr">
+                Mr
+              </label>
+              <label>
+                <input type="radio" name="title" value="mrs">
+                Mrs
+              </label>
+              <label>
+                <input type="radio" name="title" value="miss">
+                Miss
+              </label>
+            </p>
+            <p>
+              <label>First name</label>
+              <input type="text" value="first_name">
+            </p>
+            <p>
+              <label>Last name</label>
+              <input type="text" value="last_name">
+            </p>
+            <p>
+              <label>Email</label>
+              <input type="email" value="email">
+            </p>
+
+            <p>
+              <label>Phone number</label>
+              <input type="tel" value="phone">
+            </p>
+            
+            <p>
+              <label>Password</label>
+              <input type="password" value="password">
+            </p>
+            <p>
+              <label>Confirm your password</label>
+              <input type="password" value="password_confirm">
+            </p>
+            <p>
+              <label>Country</label>
+              <select>
+                <option>Canada</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>Italy</option>
+                <option>Japan</option>
+                <option>Russia</option>
+                <option>United Kingdom</option>
+                <option>United States</option>
+              </select>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" value="terms">
+                I agree to the <a href="/terms">terms and conditions</a>
+              </label>
+            </p>
+            <p>
+              <button>
+                Sign up
+              </button>
+            </p>
+          </form>
+    </section> -->
+
+  <h2>Enter Your Name</h2>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name">
+
+  <br />
+
+  <label for="country">Country:</label>
+  <input type="text" id="country">
+
+  <p id="para"></p>
+  <button id="btn" type="button" onclick="myDisplay()">Submit</button>
+  <br>
+  <br>
+  <br>
+  <h3>Switch Case</h3>
+  <input type="number" id="age">
+  <p id="ageprint"></p>
+  <button id="btn" type="button" onclick="myAge()">Submit</button>
+  <br>
+  <br>
+  <h3>If Statement</h3>
+  <input type="number" id="inputval">
+  <p id="valprint" class="valget"></p>
+  <button id="btn" type="button" onclick="myVal()">Submit</button>
+
+
+
+  <script>
+
+    function myDisplay() {
+      var nametext = document.getElementById("name").value
+      var country = document.getElementById("country").value
+      if (typeof (Storage) !== "undefined") {
+        localStorage.setItem("Name", nametext);
+        localStorage.setItem("Country", country);
+
+        document.getElementById("para").innerHTML = "Hello" + " " + localStorage.Name + " " + "from" + " " + localStorage.Country;
+      }
+      else {
+        alert("Sorry! your browser is not supporting the browser")
+      }
+    }
+
+    // var b=(20==20 ^ 20==20);
+    // console.log(b)
+
+
+    function myAge() {
+      const age = Number(document.getElementById('age').value)
+      switch (true) {
+        case (age <= 18):
+          document.getElementById('ageprint').innerHTML = "You are not eligeble"
+          break;
+
+        case (age >= 18 && age <= 26):
+          document.getElementById('ageprint').innerHTML = "You are a eligeble"
+          break;
+
+        case (age <= 50 && age >= 26):
+          document.getElementById('ageprint').innerHTML = "You are a young"
+          break;
+
+        case (age >= 50):
+          document.getElementById('ageprint').innerHTML = "You are a old"
+          break;
+
+        default:
+          document.getElementById('ageprint').innerHTML = "Enter a valid age"
+      }
+
+    }
+    
+
+
+    function myVal(){
+      const val=Number(document.getElementById('inputval').value)
+      if(val>0){
+        document.getElementById("valprint").innerHTML= val + " is positive value"
+      }else{
+        document.getElementById("valprint").innerHTML= val + " is nagative value"
+      }
+    }
+
+
+  </script>
+
+</body>
+
+</html>

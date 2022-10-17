@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+</head>
+<body>
+    
+    <p>Current Address</p>
+    <input type="text" id="words">  
+    <!-- onkeyup="copyText()" -->
+    <br>
+    <br>
+    <br>
+
+    <label>Same as Current</label>
+    <input type="checkbox" id="myCheck" value="" onclick="addEvnt()">
+
+    <br>
+    <br>
+
+    <p>Permanent Address</p>
+    <input type="text" id="words2">
+    <p id="textpaste"></p>
+
+    <button type="button">Submit</button>
+     
+    
+    <script>
+        function copyText(){
+            const textArea = document.getElementById('words').value;
+            // document.getElementById('textpaste').innerHTML=textArea;
+            document.getElementById('words2').value = textArea;
+        }
+
+        function addEvnt(){
+            var x = document.getElementById("myCheck").checked;
+            // consol.log(x);
+            if(x==true){
+                document.getElementById('words').addEventListener("keyup", copyText);
+            }
+            else{
+                document.getElementById('words').removeEventListener("keyup", copyText);
+            }
+        }
+
+
+    </script>
+
+    
+</body>
+</html>

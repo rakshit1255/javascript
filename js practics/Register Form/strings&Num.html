@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="myRadio">Yes</label>
+    <input type="checkbox" id="myRadio" class="rbtns" name="rbtn">
+
+    <br>
+    <br>
+
+    <!-- <label for="myRadio2">No</label>
+    <input type="radio" id="myRadio2" class="rbtns" name="rbtn"> -->
+
+    <br>
+    <br>
+    <p id="demo"></p>
+    <br>
+    <br>
+
+    <button onclick="myFunction()">Submit</button>
+
+    <script>
+
+        let carName1 = 'Volvo "ssas" XC60';
+        console.log(carName1);
+
+        let text = "Arche Softronix"; // Incuding Space
+        let length = text.length;
+        console.log(length);
+
+        //Escape Character 
+
+        let text2 = "We are the so-called \fVikings from the north.";
+        console.log(text2);
+
+
+        let j = Number("John");
+        // console.log(typeof(j));
+
+
+        let str = "Apple, Banana, Kiwi";
+        let part = str.slice(-5);
+        console.log(part);
+
+        let text3 = "Please visit Microsoft and Microsoft!";
+        let newText = text3.replace("MicRosoft/gi", "W3Schools");
+        console.log(newText);
+
+        let text5 = "The rain in SPAIN stays mainly in the plain";
+        let text6 =text5.match(/ain/g);
+            console.log(typeof(text6));
+    
+    </script>
+</body>
+
+</html>

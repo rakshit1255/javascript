@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="print"></p>
+    <p id="greet"></p>
+    <input type="time" id ="time">
+    <button type="button" onclick="clocktiming()"> Submit </button>
+    
+    <script>
+        // var dat = new Date();
+        // document.write(dat + "<br/>");
+        // document.write(dat.getTime() + "<br/>");
+        // document.write(dat.getFullYear() + "<br/>");
+        // document.write(dat.getMonth()+1 + "<br/>");
+        // document.write(dat.getDate() + "<br/>");
+        // document.write(dat.getDay() + "<br/>");
+        // document.write(dat.getHours() + "<br/>");
+        // document.write(dat.getMinutes() + "<br/>");
+        // document.write(dat.getSeconds() + "<br/>");
+        // document.write(dat.getMilliseconds() + "<br/>");
+
+        // document.write("<br/><br/>");
+
+        // var dat1 = new Date();
+        // document.write(dat1 + "<br/>");
+        // document.write(dat1.setTime() + "<br/>");
+        // dat1.setFullYear(2018)
+        // document.write(dat1+ "<br/>");
+        // document.write(dat1.setMonth()+1 + "<br/>");
+        // document.write(dat1.setDate() + "<br/>");
+        // document.write(dat1.setDay() + "<br/>");
+        // document.write(dat1.setHours() + "<br/>");
+        // document.write(dat1.setMinutes() + "<br/>");
+        // document.write(dat1.setSeconds() + "<br/>");
+        // document.write(dat1.setMilliseconds() + "<br/>");
+
+        // var dat1 = new Date(2014,8);
+        // document.write(dat1 + "<br/>");
+
+        var clock = setInterval(clocktiming,1000);
+        var ttim = document.getElementById("time").value;
+        
+
+        function clocktiming(){
+
+        var d =new Date();
+        console.log(typeof(d));
+        d.setHours(ttim);
+        
+        var clk=d.toLocaleTimeString();
+        var dat=d.toLocaleDateString();
+        document.getElementById("print").innerHTML="Time : "+clk+"<br/><br/>"+"Date : "+dat;
+        // clk>="12:00:01 PM" && clk<="04:00:00 PM"
+        if (clk>="06:00:01 AM" && clk<="11:59:59 AM") {
+            document.getElementById("greet").innerHTML="Helloo Good Morning !";
+        }
+        else if(clk>="12:00:01 PM" && clk<="4:00:59 PM"){
+            document.getElementById("greet").innerHTML="Helloo Good Afternoon !";
+        }
+        else if(clk>="4:00:01 PM" && clk<="8:00:00 PM"){
+            document.getElementById("greet").innerHTML="Helloo Good Evening !";
+        }
+        else {
+            document.getElementById("greet").innerHTML="Helloo Good Night !";
+        }
+
+    }
+    // clk>="12:00:01 AM" && clk<="06:00:00 AM"
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promises And Then</h1>
+    <p id="para"></p>
+    <p id="demo"></p>
+
+    <script>
+        let ppp=document.getElementById("para");
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://reqres.in/api/users?page=2", false);
+
+        const promis= new Promise((resolve,reject)=>{
+            // let xhr=true                 
+            if(xhr==true){
+                resolve("Done")
+            }else{
+                reject("Fail")
+            }
+        }).then(
+            (val)=>{ppp.innerHTML=val},
+            (error)=>{ppp.innerHTML=error}
+        ).then((val)=>{ppp.innerHTML=val},
+            (error)=>{ppp.innerHTML=error})
+
+
+            
+            // xhr.open("GET", "https://reqres.in/api/users?page=2", true);
+            // xhr.onload = function(){
+
+            //     console.log(xhr.responseText);
+            // };
+            // xhr.send();
+    </script>
+
+    <!-- <script src="import.js"></script> -->
+</body>
+</html>

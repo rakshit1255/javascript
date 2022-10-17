@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+
+    <h1>Function :</h1>
+    <br>
+    <br>
+    <p>Enter your First Name :</p>
+    <input type="text" name="firstName" id="fname">
+    <br>
+    <br>
+    <p>Enter your Last Name :</p>
+    <input type="text" name="lastName" id="lname">
+    <br>
+    <br>
+    <button type="button" onclick="fullName(fvbcvb,lastName)">Submit</button>
+    <p id="print"></p>
+
+
+    <script>
+
+        // function fullName() {
+
+        //     const fname=document.getElementById("fname").value;
+        //     const lname=document.getElementById("lname").value;
+
+        //     const Hello = (arg) => {return arg +" "+ lname +" " + fname};
+        //     document.getElementById("print").innerHTML=Hello("Hello");
+        // }
+
+
+        // const fullName=(num1,num2)=>{
+        //     console.log(num1,num2);
+        //     const fname=document.getElementById("fname").value;
+        //     const lname=document.getElementById("lname").value;
+        //     document.getElementById("print").innerHTML=("Hello "+lname+" "+fname)
+        // };
+
+        // const fname=document.getElementById("fname").value;
+        // const lname=document.getElementById("lname").value;
+        // const fullName=(num1,num2)=>{
+        //     document.getElementById("print").innerHTML=("Hello "+lname+" "+fname)
+        // };
+
+
+        // function Hello(){
+        //     return("Hello World");
+        // }
+
+        // document.write(Hello());
+
+
+
+
+        // const Hello =  () => Hello11;
+
+        // const Hello11 = "Hello World112121";
+
+        // document.write(Hello());
+
+
+
+        // const Hello = (greet) => Hello11 + greet;
+
+        // const Hello11 = "Hello World112121";
+
+        // document.write(Hello(" Good morning"));
+
+
+
+        // ******** ARRAY DESTRUCTUING *****
+
+        function getScores() {
+            return [70, 80, 90];
+        }
+        let [x,...remin] = getScores();
+
+        let scores = getScores();
+        console.log(scores);
+        console.log(remin);
+
+        // let [v,w] =stat();
+        // let [sum, average, difference] = stat(20, 10);
+        // console.log(sum, average, difference); // 30, 15, 10
+        // console.log(stat());
+
+        let person = {
+            fname: "raxit",
+            lname: "vadaliya",
+            age: 21,
+            skill: {
+                design: "photoshope",
+                web: "html",
+            }
+        }
+
+        let { fname: name, lname, skill: { design, web: hello } } = person;
+
+        console.log(hello);
+
+
+
+        const arr = [2, 5, 2, 6, 7, 1, 8, 9];
+
+        const isEven = num => num % 2 === 0;
+        const sorter = ((a, b) => {
+            if (isEven(a) && !isEven(b)) {
+                return -1;
+            };
+            if (!isEven(a) && isEven(b)) {
+                return 1;
+            };
+            return a - b;
+        });
+        const oddEvenSort = arr => {
+            arr.sort(sorter);
+        };
+        oddEvenSort(arr);
+        console.log(arr);
+    </script>
+</body>
+
+</html>

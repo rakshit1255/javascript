@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form</title>
+  <script src="https://kit.fontawesome.com/0b0d66beb0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./Css/style.css" />
+</head>
+
+<body>
+
+  <h2 id="title" onmouseover="changeColor()" onmouseout="changeColorOut()">Enter Your Name</h2>
+
+
+  <script>
+
+   function changeColor(){
+     document.getElementById('title').style.color="red"
+   }
+
+   function changeColorOut(){
+     document.getElementById('title').style.color="black"
+   }
+
+
+  </script>
+  <!-- <div>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name">
+  
+  <br />
+  
+  <label for="country">Country:</label>
+  <input type="text" id="country">
+  
+  <p id="para"></p>
+  <button id="btn" type="button" onclick="myDisplay()">Submit</button>
+  <br>
+  <br>
+  <br>
+  <h3>Switch Case</h3>
+  <input type="number" id="age">
+  <p id="ageprint"></p>
+  <button id="btn" type="button" onclick="myAge()">Submit</button>
+  <br>
+  <br>
+  <h3>If Statement</h3>
+  <input type="number" id="inputval">
+  <p id="valprint" class="valget"></p>
+  <button id="btn" type="button" onclick="myVal()">Submit</button>
+  
+</div> -->
+
+  <!-- <script>
+
+    function myDisplay() {
+      var nametext = document.getElementById("name").value
+      var country = document.getElementById("country").value
+      if (typeof (Storage) !== "undefined") {
+        localStorage.setItem("Name", nametext);
+        localStorage.setItem("Country", country);
+
+        document.getElementById("para").innerHTML = "Hello" + " " + localStorage.Name + " " + "from" + " " + localStorage.Country;
+      }
+      else {
+        alert("Sorry! your browser is not supporting the browser")
+      }
+    }
+
+    function myAge() {
+      const age = Number(document.getElementById('age').value)
+      switch (true) {
+        case (age <= 18):
+          document.getElementById('ageprint').innerHTML = "You are not eligeble"
+          break;
+
+        case (age >= 18 && age <= 26):
+          document.getElementById('ageprint').innerHTML = "You are a eligeble"
+          break;
+
+        case (age <= 50 && age >= 26):
+          document.getElementById('ageprint').innerHTML = "You are a young"
+          break;
+
+        case (age >= 50):
+          document.getElementById('ageprint').innerHTML = "You are a old"
+          break;
+
+        default:
+          document.getElementById('ageprint').innerHTML = "Enter a valid age"
+      }
+
+    }
+
+    function myVal(){
+      const val=Number(document.getElementById('inputval').value)
+      if(val>0){
+        document.getElementById("valprint").innerHTML= val + " is positive value"
+      }else{
+        document.getElementById("valprint").innerHTML= val + " is nagative value"
+      }
+    }
+
+  </script> -->
+
+
+  <!-- <script>
+    // i=row
+    // j=col
+    for (var i = 0; i <= 10; i++) {
+      for (var j = 1; j <= i; j++) {
+        document.write("*")
+      }
+      document.write("*" + "<br/>")
+    }
+
+    var b = "Helloo"
+
+    console.log(b);
+
+    var b = "Helloo 11"
+    console.log(b)
+
+
+    // Global Scope 
+
+    var x = 3;
+
+    if (true) {
+      var x = 5
+      console.log(x);
+    }
+
+    console.log(x); // show 3
+
+    var k = 8
+
+    console.log(k);
+    var k = 10
+    console.log(k);
+    // document.write("<br/><br/>")
+
+    //   for(i=1; i<=10; i++){
+    //     document.write(i + "<br/>")
+    //   }
+    console.log("**************************************");
+
+    carName = "Volvo";
+    var carName;
+    console.log(carName)
+
+    console.log("**************************************");
+
+    var x = 5; // Initialize x
+    let y = "";     // Declare y
+
+    // elem = document.getElementById("demo");  Find an element
+    // elem.innerHTML = x + " " + y;            Display x and y
+
+    console.log(x + " " + y)
+
+    y = 7;    // Assign 7 to y
+
+    console.log("**************************************");
+    
+    for (let i = 0; i < 10; i++) { 
+      if (i === 3) { 
+        break; 
+      }
+     console.log( "The number is " + i + "<br>");
+    }
+  </script> -->
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    
+    <script>
+        console.log("start")
+
+        function getName(name,callback){
+            setTimeout(()=>{
+                console.log(name)
+                // return name
+                callback(name)
+            },2000)
+        }
+
+        function getHobbies(hobbie,callback){
+            setTimeout(()=>{
+                console.log("Inside Hobbies function")
+                callback([1,2,3,4,5])
+            },2000)
+        }
+
+        let ddd= getName("hello",(ddd)=>{console.log(ddd);
+            getHobbies(ddd,(hobbie)=>{console.log(hobbie)})
+        })
+
+    </script>
+
+    <!-- <script>
+
+        // function displ(some){
+        //     console.log(some)
+        // }
+
+        // function sum(x,y){
+        //     sum=x+y
+        //     return sum
+        // }
+        // sum(5,5)
+        // displ(sum)
+
+// =====================================================================
+
+                //displ(15)
+        function displ(some){
+            console.log("After Calculation ",some) //console.log(15)
+        }
+
+        function sumfun(x,y){
+             sumres=x+y
+    // forEx:sumres = 5+10 
+    //       sumres=15
+            displ(sumres) //displ(15)
+        }
+
+        sumfun(5,10)
+        
+// =====================================================================
+
+
+    </script> -->
+
+</body>
+
+</html>

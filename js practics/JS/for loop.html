@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Loops</h1>
+    <p id="print"></p>
+    <p id="print2"></p>
+
+
+    <script>
+
+        let arr = ["hello", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let p = document.getElementById("print");
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                p.innerHTML += arr[i] + "<br>";
+            }
+        }
+
+
+
+        // const companies = [
+        //     { name: "Google", category: "Product Base", start: 1987, end: 2014 },
+        //     { name: "Amezon", category: "Product Base", start: 1997, end: 2004 },
+        //     { name: "Yahoo", category: "Product Base", start: 1982, end: 2011 },
+        //     { name: "Flipcart", category: "Service Base", start: 1967, end: 1999 },
+        //     { name: "Google", category: "Service Base", start: 1967, end: 1999 }
+        // ];
+        // const age = [20, 12, 30, 24, 15, 27, 33, 49, 10, 50, 42, 39, 23, 32];
+
+        // // for
+        // for (let i = 0; i < companies.length; i++) {
+
+        //     var txt="";
+        //         let l=companies[i];
+        //         let keyss=Object.keys(l);
+        //         let valuess=Object.values(l);
+        //         let h = document.getElementById("print2");
+
+        //     for(let j=0; j<keyss.length; j++){
+        //         // h.innerHTML=k[j] + " : " + f[j];
+        //         txt+=keyss[j] + " : " + valuess[j]+ " | ";
+        //     }
+        //     h.innerHTML+=txt+"<Br>";
+        // }
+
+
+        // var companies = [
+        //     { name: "Google", category: "Product Base", start: 1987, end: 2014 },
+        //     { name: "Amezon", category: "Product Base", start: 1997, end: 2004 },
+        //     { name: "Yahoo", category: "Product Base", start: 1982, end: 2011 },
+        //     { name: "Flipcart", category: "Service Base", start: 1967, end: 1999 },
+        //     { name: "Google", category: "Service Base", start: 1967, end: 1999 }
+        // ];
+        // const age = [20, 12, 30, 24, 15, 27, 33, 49, 10, 50, 42, 39, 23, 32];
+
+        // // for
+        // for (let i = 0; i < companies.length; i++) {
+        //     // p = JSON.stringify(companies[1])
+
+        //     // document.write(p);
+        //     document.write(companies[i]);
+        // }
+
+
+        // **************************************************
+
+
+        var object22 = {
+            name: "ruchika"
+        };
+
+
+
+
+        const a = () => {
+            // console.log("This Is arrow function ",this.object22);
+            console.log(this);
+        };
+
+
+
+
+        function b() {
+            // console.log("This Is Normal function ",this.object22);
+            console.log(this);
+        }
+        a();
+        b();
+
+
+        var obj = {
+            prop1: 'prop1Value',
+            prop2: 'prop2Value',
+        }
+
+        var companies = [
+            { name: "Google", category: "Product Base", start: 1987, end: 2014 },
+            { name: "Amezon", category: "Product Base", start: 1997, end: 2004 },
+            { name: "Yahoo", category: "Product Base", start: 1982, end: 2011 },
+            { name: "Flipcart", category: "Service Base", start: 1967, end: 1999 },
+            { name: "Google", category: "Service Base", start: 1967, end: 1999 }
+        ];
+    let arr1=[1,2,3,4,5,6,7,8]
+    let fullObj1=arr1.reduce(function(total, num){
+        return total+num
+         
+    })
+    document.write(fullObj1);
+
+        // let fullObj= companies.map(function(value){
+        //     return `${value.name}-${value.category} - ${value.start} - ${value.end} <br>`
+        // });
+       document.write(fullObj);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 100px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Helllo</h1>
+    <div id="divp">
+
+    </div>
+    <img src="" alt="" id="img">
+    <p id="para"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+
+    <!-- <script>
+        // console.log("Start")
+        // function fun(name,callback){
+        //     setTimeout(()=>{
+        //         console.log("Inside Time out function")
+        //         callback()
+        //     },5000)
+        // }
+        // fun("NAME",(name)=>{confirm.log("MMM")})
+
+        function getdata() {
+            console.log("Start")
+            url = 'https://fakestoreapi.com/products'
+
+            fetch(url).then(
+                (url) => {
+                    console.log("First then")
+                    return url.json()
+                })
+
+                .then((data) => {
+                    console.log(data[0].title)
+                    var ddd=document.getElementById('para')
+                    
+                    let title = "";
+                    const getTitle = data.map(data => {
+                        title += data.title+"="+data.price+"<br/>";
+                        ddd.innerHTML=title
+                       
+                    });
+
+                    var ddd2=document.getElementById('para2')
+                    let price=""
+                    const getPrice=data.map((data)=>{
+                        price+=data.price+"<br/>"
+                        ddd2.innerHTML=price 
+                    })
+
+                    // console.log( getPrice )
+                    // var ddd3=document.getElementById('para3')
+                    // ddd3.innerHTML=`${title} == ${price} <br/>`
+                    // ddd3.innerHTML=getPrice+" "+getTitle;
+                })
+        }
+
+        getdata()
+
+    </script> -->
+
+    <script>
+        function getdata() {
+            console.log("Start")
+            url = 'https://jsonplaceholder.typicode.com/albums/1/photos'
+            
+            fetch(url).then(
+                (url) => {
+                    console.log("First then")
+                    return url.json()
+                })
+
+                .then((data) => {
+                    // console.log(data[0].url)
+                    // var ddd=document.getElementById('para')
+                    
+                    // let title = "";
+                    // var imgsrc = document.getElementById("img").src
+                    
+                    const getTitle = data.map(data => {
+                        var divp = document.getElementById("divp")
+                        var imgTag=document.createElement("img")
+                        divp.appendChild(imgTag)
+                        imgTag.src=data.url
+                        // imgTag += data.title+"<br/>"+data.url+"<br/><br/>";
+                        var ddd=document.getElementById('para')
+                        // ddd.innerHTML=data.id
+                    });
+
+                    // var ddd2=document.getElementById('para2')
+                    // let price=""
+                    // const getPrice=data.map((data)=>{
+                    //     price+=data.price+"<br/>"
+                    //     ddd2.innerHTML=price 
+                    // })
+                })
+        }
+
+        getdata()
+    </script>
+
+    <script>
+        fetch(url).then(
+                (url) => {
+                    console.log("First then")
+                    return url.json()
+                })
+                .then((data) => {
+                    const getTitle = data.map(data => {
+                        var divp = document.getElementById("divp")
+                        var imgTag=document.createElement("img")
+                        divp.appendChild(imgTag)
+                        imgTag.src=data.url
+                        var ddd=document.getElementById('para')
+                    });
+                })
+        
+
+        getdata()
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- setTimeout(() => {
+    console.log("data[0].title")
+}, 3000)
+return url.json() -->
+
+
+
+
+
+<!-- function funget(){
+    fetch('https://fakestoreapi.com/products/1')
+    .then(res=>res.json())
+    .then(json=>console.log(json))
+}
+funget() -->
+
+
+
+<!-- ddd.mep(data)
+ddd.map((data)=>{ddd.innerHTML=data})
+function myFunction(num) {
+    return num * 10;
+    } -->

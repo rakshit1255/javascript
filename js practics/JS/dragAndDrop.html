@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag And Drop</title>
+
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .imgBox {
+            border: 3px solid #666;
+            background-color: #ddd;
+            border-radius: .5em;
+            padding: 10px;
+            cursor: move;
+            width: 200px;
+            margin: 20px;
+        }
+
+        .box.over {
+            border: 3px dotted #666;
+        }
+        .hold{
+            border: 3px solid red;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div draggable="true" class="imgBox">A</div>
+        <div draggable="true" class="imgBox">A</div>
+        <div draggable="true" class="imgBox">A</div>
+        <!-- <div draggable="true" class="box">B</div>
+        <div draggable="true" class="box">C</div> -->
+    </div>
+
+
+    <script>
+        const box = document.querySelectorAll(".box");
+
+        box.addEventListener('dragstart', () => {
+            console.log("dragstart event");
+
+        });
+        box.addEventListener('dragend', () => {
+            console.log("dragEnd event");
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+    <script>
+
+        console.log("This is drag and drop utility");
+
+        // Getting the DOM elements:-
+        // You can get problems while looping through querySelectors
+        // const imgBox = document.querySelector('div#imgBox'); // Div with id imgBox(no need)
+        // const whiteBoxes = document.querySelector('div.whiteBox'); // Div with class whiteBox
+        const imgBox = document.querySelector('.container');
+        const whiteBoxes = document.getElementsByClassName('box')
+
+        //Event listeners for draggable element, imgBox
+        // When dragging starts
+        imgBox.addEventListener("dragstart", (e) => {
+
+            console.log("dragstart has been triggered")
+            // this.className +=' hold';
+            // The target is the imgBox(on which the event listener is listened for)
+            e.target.className += ' hold';
+            // When everything is done right after that, not after a second or two 0 seconds after it
+            setTimeout(() => {
+                e.target.className += 'hide';
+            }, 0);
+        })
+        // When dragging is over
+        imgBox.addEventListener("dragend", (e) => {
+            console.log("dragend has been triggered")
+            e.target.className = 'imgBox' // Without this the draggable element would vanish
+        })
+
+        for (whiteBox of Array.from(whiteBoxes)) {
+            // When it is dragged over a whiteBox
+            whiteBox.addEventListener('dragover', (e) => {
+                // You cannot drop it by default
+                e.preventDefault(); // Without this you won't be able to drop it. You have to apply it to the start of the drag, not in drop event
+                console.log('dragover')
+
+            });
+            // When it enters a whiteBox
+
+            whiteBox.addEventListener('dragenter', (e) => {
+                console.log('dragenter')
+                e.target.className += ' dashed';
+
+            });
+            // When you leave the box, this is quite similar to dragend but it isn't, you might get confused
+            whiteBox.addEventListener('dragleave', () => {
+                console.log('dragleave')
+            });
+            // When you finally drop it
+            whiteBox.addEventListener('drop', (e) => {
+                // e.preventDefault();
+                console.log('drop');
+
+                // Yes adding an element is that easy
+                if (e.target.id != 'imgBox') { e.target.append(imgBox); }
+            });
+        };
+    </script>
+</body>
+
+</html>

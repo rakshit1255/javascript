@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Email Validation</title>
+
+    <!-- <link rel="stylesheet" href="CSS/Styles.css"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/436cc35420.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <input type="email" name="mail" id="emailid" onkeyup="emailValid()">
+    <button type="button" id=emailbtn disabled>Submit</button>
+    <p id="para"></p>
+    <p id="parass">@gmail.com</p>
+    <p id="parass">@archesoftronix.com</p>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <p id="loremtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto dicta dolore error blanditiis libero molestiae consequatur delectus voluptatem unde quae culpa qui nesciunt hic veritatis sapiente laudantium dolor</p>
+    <p id="para1"></p>
+    
+    <br/>
+    <br/>
+    <br/>
+    
+
+    <input type="text" name="text" id="countid" style="width: 600px;" onkeyup="count()">
+    <p id="para2"></p>
+    <br/>
+    <br/>
+    <br/>
+    <input type="text" name="text" id="stud" style="width: 600px;">
+    <button type="button" id="studbtn" onclick="studentEnr()">Submit</button>
+    <p id="students"></p>
+    <script>
+
+        function emailValid(){
+
+            let email=document.getElementById('emailid').value;
+            let emailPattern= /[a-z]{1,10}[.][a-z]{1,20}@archesoftronix[.]com$/ig;
+            let para=document.getElementById('para');
+            // para.innerHTML="Valid"   
+            // rakshit.vadaliya@archesoftronix.com
+            // rakshit.vadaliya@archesoftronix.com
+            // rakshit09@gamil.com
+            let valid = emailPattern.test(email);
+           try{
+            if(valid===true){
+                document.getElementById("emailbtn").disabled = false;
+                // throw "valid"
+                // para.innerHTML="Valid"
+            }else{
+                document.getElementById("emailbtn").disabled = true;
+                // throw "not a valid"
+                // para.innerHTML="Not Valid"
+            }
+           }
+           catch(err) {
+                para.innerHTML = "Input is " + err;
+            }
+
+        }   
+  
+            // var text1=document.getElementById('loremtext').innerHTML;
+            // let text1=document.getElementById('para1').innerHTML;
+            // var text1=text1.split(" ");
+            // var txt=text1.length-1
+            // document.getElementById('para1').innerHTML=txt+"<br><br>"+text1;
+
+
+        function count(){
+            // let count=0
+
+
+            // document.getElementById('para1').innerHTML=txt+"<br><br>"+text1;
+
+
+            let counter=document.getElementById('countid').value;
+            let count=counter.length-1;
+            var text1=document.getElementById('countid').value;
+            var text1=text1.split(" ");
+            var txt=text1.length;
+            if(count>=0){
+                count++;
+            document.getElementById('para2').innerHTML=count+"<br/>"+txt;
+            }else{  
+                document.getElementById('para2').innerHTML=0;
+            }
+        }
+
+    </script>
+
+
+
+
+
+<!-- /***************************************************************************** -->
+<!-- /***************************************************************************** -->
+<!-- /***************************************************************************** -->
+<!-- /***************************************************************************** -->
+<script>
+
+function studentEnr(){
+    var stud=document.getElementById("stud").value
+const students = [
+    {name: stud, subject: "JavaScript"}
+    // {name: "Rohan", subject: "Machine Learning"}
+]
+
+
+function enrollStudent(student, callback){
+    setTimeout(function() {
+        students.push(student);
+        console.log("Student has been enrolled");
+        callback();
+    });
+}
+
+function getStudents(){
+    setTimeout(function() {
+        let str = "";
+        students.forEach(function(student){
+            str += `<li> ${student.name}</li>`
+        });
+        document.getElementById('students').innerHTML = str;
+        console.log("Students have been fetched");
+    });
+}
+
+let newStudent = {stud, subject:"Python"}
+enrollStudent(newStudent, getStudents);
+
+}
+
+
+</script>
+
+
+
+
+
+
+
+</body>

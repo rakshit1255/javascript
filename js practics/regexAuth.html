@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-center bg-dark text-white">Form Validation with Regex</h1>
+    <br> <br>
+    <div class="container">
+
+        
+        <form >
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" name="" id="username" class="form-control" />
+                <span id="usererror" class="text-danger font-weight-bold"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="" id="password" class="form-control"/>
+                <span id="passerror" class="text-danger font-weight-bold"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Confirm Password:</label>
+                <input type="password" name="" id="cfpassword" class="form-control"/>
+                <span id="cpasserror" class="text-danger font-weight-bold"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="" id="email" class="form-control"/>
+                <span id="emailerror" class="text-danger font-weight-bold"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Mobile Number:</label>
+                <input type="number" name="" id="number" class="form-control"/>
+                <span id="numbererror" class="text-danger font-weight-bold"></span>
+            </div>
+            <br>
+            <input type="button" name="" class="btn btn-primary" onclick="validation()"/>
+            
+
+        </form>
+    </div>
+
+
+    <script>
+     function validation  (){
+        let username=document.getElementById('username').value;
+        let password=document.getElementById('password').value;
+        let confirmPassword=document.getElementById('cfpassword').value;
+        let email =document.getElementById('email').value;
+        let mobNumber=document.getElementById('number').value;
+     
+
+
+        let usercheck= /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+     let passcheck="^(?=.*[0-9])"
+                       + "(?=.*[a-z])(?=.*[A-Z])"
+                       + "(?=.*[@#$%^&+=])"
+                       + "(?=\\S+$).{8,20}$";
+
+    let emailCheck=/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let numberCheck=/^(\+\d{1,3}[- ]?)?\d{10}$/;
+
+
+    // UserCheck 
+    if(usercheck.test(username)){
+            document.getElementById('usererror').innerHTML="";
+
+    }
+    else{
+        document.getElementById('usererror').innerHTML=" ** username is invalid";
+        return false;
+    }
+
+
+
+    // Passwore Check
+    if(passcheck.test(password)){
+            document.getElementById('passerror').innerHTML="";
+
+    }
+    else{
+        document.getElementById('passerror').innerHTML=" ** password is invalid";
+        return false;
+    }
+
+    //Confirm Password Match
+
+    if(confirmPassword.match(password)){
+        document.getElementById('cpasserror').innerHTML="";
+
+    }else{
+        document.getElementById('cpasserror').innerHTML="** Password does not match";
+        return false;
+    }
+
+
+    // email Check
+
+    if(emailCheck.test(email)){
+            document.getElementById('emailerror').innerHTML="";
+
+    }
+    else{
+        document.getElementById('emailerror').innerHTML=" ** email is invalid";
+        return false;
+    }
+
+
+    // Mobile Number Check
+    if(numberCheck.test(mobNumber)){
+            document.getElementById('numbererror').innerHTML="";
+
+    }
+    else{
+        document.getElementById('numbererror').innerHTML=" ** Mobile Number is invalid";
+        return false;
+    }
+
+ }
+
+     
+    </script>
+</body>
+</html>

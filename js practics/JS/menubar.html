@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HTML FORM</title>
+
+  <!-- <link rel="stylesheet" href="CSS/Style.css"> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/436cc35420.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+header{
+    background-color: rgb(0, 23, 81);
+}
+header a{
+  color: white;
+  font-weight: bold;
+}
+ul,li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menus{
+  text-align: end;
+}
+.menubar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  color: white;
+}
+.menubar ul{
+  align-items: center;
+}
+.menubar li{
+  margin: 10px 0;
+}
+.menubar li:hover{
+  color: rgb(225, 225, 225);
+}
+#menu_item_id{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+/* ***************************************** */
+/* ***************************************** */
+
+@media (min-width:767px){
+    .menus{
+      display: none;
+    }
+    #menu_item_id{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+    .menubar li{
+        margin: 8px 16px;
+    }
+} 
+</style>
+
+<body>
+
+<header>
+    <div class="menubar">
+
+      <div class="brand_logo">
+        <h1> <a href="#"> LoGo HeRe </a> </h1>
+      </div>
+
+      <div class="menus">
+          <i class="fa fa-bars" onclick="menuToggle()"></i>
+        <ul id="menu_item_id">
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Blog</li>
+          <li>Contect Us</li>
+        </ul>
+        
+      </div>
+    </div>
+  </header>
+<script>
+    function menuToggle(){
+
+        console.log("hello");
+        let menu = document.getElementById("menu_item_id");
+
+        if(menu.style.display=="none"){
+            menu.style.display="flex"; 
+        }
+        else{
+            menu.style.display="none";
+        }
+    }
+      
+  </script>
+</body>

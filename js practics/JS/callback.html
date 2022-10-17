@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Then and catch</title>
+</head>
+
+<body>
+    <h1>Then and catch</h1>
+    <input type="text" id="names">
+    <button type="button" id="btn">Submit</button>
+        <p id="prt"></p>
+
+        <script>
+
+            btn = document.getElementById("btn");
+            btn.addEventListener('click', namess())
+
+            function namess() {
+                
+                var name = document.getElementById("names").value;
+                var prt = document.getElementById("prt");
+
+                function hello(fn1) {
+                    console.log("helloo..." + fn1);
+                    // debugger
+                }
+                
+                // let arw=()=>{console.log("helloo...This Is Arow Function")};
+
+                // var pr=console.log("helloo...This Is Hello Function");
+
+                function prints(fn2, success) {
+
+                    // var sdsd=100;
+                    success(fn2);
+                }
+                prt.innerHTML=prints(name, hello);
+
+            }
+        </script>
+</body>
+
+</html>
